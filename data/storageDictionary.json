@@ -1,0 +1,22 @@
+{
+    "0": {
+        "name": "AI",
+        "machineStatistics": {
+            "totalScore": 0,
+            "losses": 0,
+            "consecutiveMatches": 0,
+            "shield": false
+        }
+    },
+    "1": {
+        "name": "fewfwe",
+        "nickname": "wefwefwe",
+        "playerStatistics": {
+            "totalScore": 0,
+            "scoreMachine": 0,
+            "lossesAgainstMachine": 0,
+            "shield": false,
+            "consecutiveMatches": 0
+        }
+    }
+}

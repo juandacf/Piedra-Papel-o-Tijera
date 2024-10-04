@@ -39,7 +39,7 @@ def signUp (mainDict):
                 }
             
             }
-            mainDict.update({len(mainDict)+1:playerConstructor})
+            mainDict.update({len(mainDict):playerConstructor})
         else:
             input('El nickname elegido ya fue previamente escogido. Escoja otro.')
         signUpRepetition= bool(input("Si desea agregar algún otro nombre, presione un caracter y enter. Si no, solo oprima enter."))
@@ -51,6 +51,18 @@ def userLogin (mainDict):
         nickName = str(input("Por favor, ingrese su nickname")).lower()
         nameSwitch = False
         nickNameSwitch =False
+
+    for i in range(1, len(mainDict)+1):
+        if (completeName==mainDict[i]['name']):
+            nameSwitch=True
+            nameIndex = i
+            if (nickName==mainDict[nameIndex]['nickname']):
+                nickNameSwitch=True
+    
+    if(nameSwitch==True and nickNameSwitch):
+        return True
+    else:
+        return False
 
 
 

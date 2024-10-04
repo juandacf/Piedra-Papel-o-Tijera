@@ -1,6 +1,7 @@
 import json
 import os
-dataBasePath = '/data/ligaBetplay.json' 
+
+dataBasePath = 'data/storageDictionary.json' 
 
 def newFile(fileName):
     with open (dataBasePath, "w") as wf:
