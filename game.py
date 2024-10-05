@@ -6,7 +6,8 @@ def actualGame2(first,second,mainDict):
     print(f'{first} será el primer jugador. {second} será el segundo')
     consecutivespl1=0
     consecutivespl2=0
-    while(consecutivespl1<3 or consecutivespl2<3): #validar el ingreso de strings para que no salga error 
+    switchGame= True
+    while(switchGame==True): #validar el ingreso de strings para que no salga error 
 
         optionpl1= int(input(f'Por favor,{first}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
         optionpl2= int(input(f'Por favor,{second}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
@@ -20,14 +21,18 @@ def actualGame2(first,second,mainDict):
             elif (optionpl2==2 and optionpl1==1) or (optionpl2==3 and optionpl1==2) or (optionpl2==1 and optionpl1==3): #partida ganada pl2
                 consecutivespl2+=1
                 consecutivespl1=0
-                print(f'{second} lleva {consecutivespl1} partidas ganadas. {first} ahora tiene 0')
+                print(f'{second} lleva {consecutivespl2} partidas ganadas. {first} ahora tiene 0')
         else:
             print("Por favor, ingrese un valor adecuado:")
+        
+        if (consecutivespl1==3) or (consecutivespl2==3):
+            switchGame= False
+        
     
     if(consecutivespl1==3):
-        print(f'El ganador fue el {first}')
+        input(f'El ganador fue el {first}. Presione enter para volver al menú principal')
     elif (consecutivespl2==3):
-        print(f'El ganador fue el {second}')
+        input(f'El ganador fue el {second}. Presione enter para volver al menú principal')
 
 def twoPlayerGame(mainDict:dict):
     os.system('clear')
