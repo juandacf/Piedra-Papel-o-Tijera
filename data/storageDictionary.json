@@ -5,30 +5,30 @@
         "statistics": {
             "totalScore": 0,
             "losses": 0,
-            "consecutiveMatches": 0,
+            "consecutiveRounds": 0,
             "shield": false
         }
     },
     "1": {
-        "name": "juan",
-        "nickname": "juancho",
+        "name": "a",
+        "nickname": "aa",
         "statistics": {
             "totalScore": 0,
             "scoreMachine": 0,
             "lossesAgainstMachine": 0,
-            "shield": false,
-            "consecutiveMatches": 0
+            "consecutiveRounds": 0,
+            "shield": false
         }
     },
     "2": {
-        "name": "pedro",
-        "nickname": "pedrito",
+        "name": "b",
+        "nickname": "bb",
         "statistics": {
             "totalScore": 0,
             "scoreMachine": 0,
             "lossesAgainstMachine": 0,
-            "shield": false,
-            "consecutiveMatches": 0
+            "consecutiveRounds": 0,
+            "shield": false
         }
     }
 }

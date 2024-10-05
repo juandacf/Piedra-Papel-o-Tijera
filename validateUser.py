@@ -21,7 +21,7 @@ def signUp (mainDict):
                 'statistics':{
                     'totalScore': 0,
                     'losses':0,
-                    'consecutiveMatches':0,
+                    'consecutiveRounds':0,
                     'shield':False,
                 }
             }
@@ -35,8 +35,8 @@ def signUp (mainDict):
                     'totalScore': 0,
                     'scoreMachine':0,
                     'lossesAgainstMachine':0,
+                    'consecutiveRounds':0,
                     'shield':False,
-                    'consecutiveMatches':0
                 }
             
             }
@@ -47,8 +47,8 @@ def signUp (mainDict):
 
 def logIn(mainDict:dict):
 
-    completeName = str(input("Por favor, ingrese su primer nombre y primer apellido sin espacios para identificarse")).lower()
-    nickName = str(input("Por favor, ingrese el nickname para identificarse ")).lower()
+    completeName = str(input("Por favor, ingrese su primer nombre y primer apellido sin espacios para identificarse: ")).lower()
+    nickName = str(input("Por favor, ingrese el nickname para identificarse: ")).lower()
     validateSwitch= False
 
     for k,v in mainDict.items():
@@ -57,22 +57,11 @@ def logIn(mainDict:dict):
                 validateSwitch= True
     
     if(validateSwitch==True):
-        return True
+        return str(nickName)
     else:
         return False
     
-def validateTwoPlayers(mainDict:dict):
-    os.system('clear')
-    print('Ingrese los datos de validaciòn del primer usuario')
-    user1validation = logIn(mainDict)
-    os.system('clear')
-    print('Ingrese los datos de validaciòn del segundo usuario')
-    user2validation =logIn(mainDict)
 
-    if (user1validation==True and user2validation==True):
-        return True
-    else:
-        return False
     
    
 

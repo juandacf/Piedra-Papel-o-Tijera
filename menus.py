@@ -27,7 +27,8 @@ Por favor, ingrese la mejor opción:
             sj.addData(mainDict)
             mainMenu(mainDict)
         case 2:
-            pass
+            gm.twoPlayerGame(mainDict)
+            mainMenu(mainDict)
         case 3:
             pass
         case 4:
