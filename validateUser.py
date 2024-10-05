@@ -17,7 +17,8 @@ def signUp (mainDict):
         if (len(mainDict)==0):
             machineConstructor = {
                 'name':'AI',
-                'machineStatistics': {
+                'nickname': 'AI',
+                'statistics':{
                     'totalScore': 0,
                     'losses':0,
                     'consecutiveMatches':0,
@@ -30,7 +31,7 @@ def signUp (mainDict):
             playerConstructor = {
                 'name': completeName,
                 'nickname': nickName,
-                'playerStatistics': {
+                'statistics': {
                     'totalScore': 0,
                     'scoreMachine':0,
                     'lossesAgainstMachine':0,
@@ -39,30 +40,55 @@ def signUp (mainDict):
                 }
             
             }
-            mainDict.update({len(mainDict):playerConstructor})
+            mainDict.update({int(len(mainDict)):playerConstructor})
         else:
             input('El nickname elegido ya fue previamente escogido. Escoja otro.')
         signUpRepetition= bool(input("Si desea agregar algún otro nombre, presione un caracter y enter. Si no, solo oprima enter."))
 
-def userLogin (mainDict):
-    userLoginRepetition = False
-    while (userLoginRepetition==False):
-        completeName = str(input("Por favor, ingrese su nombre completo sin espacios y en minúsculas")).lower()
-        nickName = str(input("Por favor, ingrese su nickname")).lower()
-        nameSwitch = False
-        nickNameSwitch =False
+def logIn(mainDict:dict):
 
-    for i in range(1, len(mainDict)+1):
-        if (completeName==mainDict[i]['name']):
-            nameSwitch=True
-            nameIndex = i
-            if (nickName==mainDict[nameIndex]['nickname']):
-                nickNameSwitch=True
+    completeName = str(input("Por favor, ingrese su primer nombre y primer apellido sin espacios para identificarse")).lower()
+    nickName = str(input("Por favor, ingrese el nickname para identificarse ")).lower()
+    validateSwitch= False
+
+    for k,v in mainDict.items():
+        if v.get('name')==completeName:
+            if v.get('nickname')==nickName:
+                validateSwitch= True
     
-    if(nameSwitch==True and nickNameSwitch):
+    if(validateSwitch==True):
         return True
     else:
         return False
+    
+def validateTwoPlayers(mainDict:dict):
+    os.system('clear')
+    print('Ingrese los datos de validaciòn del primer usuario')
+    user1validation = logIn(mainDict)
+    os.system('clear')
+    print('Ingrese los datos de validaciòn del segundo usuario')
+    user2validation =logIn(mainDict)
+
+    if (user1validation==True and user2validation==True):
+        return True
+    else:
+        return False
+    
+   
+
+    
+
+
+
+
+
+
+   
+    
+
+
+
+
 
 
 

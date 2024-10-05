@@ -2,6 +2,7 @@
 import os
 import validateUser as vu
 import storageJson as sj
+import game as gm
 
 
 mainDictionary ={}
