@@ -1,37 +1,4 @@
-import game 
-directorioPrueba= {
-    "0": {
-        "name": "AI",
-        "nickname": "AI",
-        "statistics": [
-            0,
-            0,
-            0,
-            False
-        ]
-    },
-    "1": {
-        "name": "juan",
-        "nickname": "juandacf",
-        "statistics": [
-            0,
-            0,
-            0,
-            0,
-            False
-        ]
-    },
-    "2": {
-        "name": "pedro",
-        "nickname": "pedrito",
-        "statistics": [
-            0,
-            0,
-            0,
-            0,
-            False
-        ]
-    }
-}
+import random 
 
-game.actualGame2('pedrito','juan', directorioPrueba)
+for i in range (100):
+    print(random.randint(1,3))

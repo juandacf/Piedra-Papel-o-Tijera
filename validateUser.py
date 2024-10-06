@@ -18,8 +18,8 @@ def signUp (mainDict):
             machineConstructor = {
                 'name':'AI',
                 'nickname': 'AI',
-                'statistics':[0,0,0, False], 
-            }#0(PT), 1(winsmachine), 2[lossesmachine], 3[victoriasConsecutivas], 3[escudo]
+                'statistics':[0,0,0, False], #0(PT), 1(losses), 2[consecutivewins], 3[shield]
+            }
             mainDict.update({int(len(mainDict)):machineConstructor})
         
         if(signUpPermission==True):
@@ -28,7 +28,7 @@ def signUp (mainDict):
                 'nickname': nickName,
                 'statistics': [0,0,0,0, False],
         
-            }
+            } #0(PT), 1(winsmachine), 2[lossesmachine], 3[victoriasConsecutivas], 4[escudo]
             mainDict.update({int(len(mainDict)):playerConstructor})
         else:
             input('El nickname elegido ya fue previamente escogido. Escoja otro.')

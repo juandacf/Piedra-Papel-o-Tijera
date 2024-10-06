@@ -33,7 +33,10 @@ Por favor, ingrese la mejor opción:
             sj.addData(mainDict)
             mainMenu(mainDict)
         case 3:
-            pass
+            os.system('clear')
+            gm.onePlayerGame(mainDict)
+            sj.addData(mainDict)
+            mainMenu(mainDict)
         case 4:
             pass
         case 5:
