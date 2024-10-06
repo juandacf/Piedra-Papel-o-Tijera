@@ -1,3 +1,45 @@
 {
-
+    "0": {
+        "name": "AI",
+        "nickname": "AI",
+        "statistics": [
+            0,
+            0,
+            0,
+            false
+        ]
+    },
+    "1": {
+        "name": "a",
+        "nickname": "aa",
+        "statistics": [
+            6,
+            1,
+            0,
+            1,
+            false
+        ]
+    },
+    "2": {
+        "name": "b",
+        "nickname": "bb",
+        "statistics": [
+            2,
+            0,
+            0,
+            1,
+            false
+        ]
+    },
+    "3": {
+        "name": "c",
+        "nickname": "cc",
+        "statistics": [
+            0,
+            0,
+            0,
+            0,
+            false
+        ]
+    }
 }

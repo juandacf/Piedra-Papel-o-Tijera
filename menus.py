@@ -7,6 +7,7 @@ import game as gm
 
 mainDictionary ={}
 sj.checkFile('storageDictionary')
+mainDictionary= sj.readFile()
 
 
 def mainMenu(mainDict):

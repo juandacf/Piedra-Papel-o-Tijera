@@ -8,10 +8,10 @@ def signUp (mainDict):
         nickName = str(input("Por favor, ingrese el nickname para identificarse en el juego.")).lower()
         signUpPermission = True
 
-        if(len(mainDict)>0):
-            for i in range (1,len(mainDict)):
-                if(nickName==mainDict[i]['nickname']):
-                    signUpPermission=False
+        if(len(mainDict)>0):  #revisar si el nickname ya está
+            for k,v in mainDict.items():
+                if v.get('nickname')==nickName:
+                    signUpPermission = False
 
 
         if (len(mainDict)==0):

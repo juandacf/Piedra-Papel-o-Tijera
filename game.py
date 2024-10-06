@@ -34,14 +34,14 @@ def actualGame2(first,second,mainDict):
                 else:
                     consecutivespl1+=1
                     consecutivespl2=0
-                    print(f'{first} lleva {consecutivespl1} partidas ganadas. {second} ahora tiene 0')
+                    print(f'{first} lleva {consecutivespl1} rondas ganadas. {second} ahora tiene 0')
             elif (optionpl2==2 and optionpl1==1) or (optionpl2==3 and optionpl1==2) or (optionpl2==1 and optionpl1==3): #partida ganada pl2
                 if(mainDict.get(indexpl1).get('statistics')[4]==True):
                     mainDict.get(indexpl1).get('statistics')[4]=False
                 else:
                     consecutivespl2+=1
                     consecutivespl1=0
-                print(f'{second} lleva {consecutivespl2} partidas ganadas. {first} ahora tiene 0')
+                print(f'{second} lleva {consecutivespl2} rondas ganadas. {first} ahora tiene 0')
         else:
             print("Por favor, ingrese un valor adecuado:")
 
@@ -49,20 +49,20 @@ def actualGame2(first,second,mainDict):
             switchGame= False
 
     if(consecutivespl1==3):
-        mainDict.get(indexpl1).get('statistics')[3]+=1
+        mainDict.get(indexpl1).get('statistics')[3]+=1 #+1 vicotira consecuiva al pl1
         if mainDict.get(indexpl1).get('statistics')[3]==2:
-            mainDict.get(indexpl1).get('statistics')[4]=True
+            mainDict.get(indexpl1).get('statistics')[4]=True #si el pl1 tiene dos victorias consecutivas, se gana el escudo
             print(f'Por haber ganado dos partidas consecutivas, el jugador{first} se ha ganado un escudo.')
-        mainDict.get(indexpl1).get('statistics')[0]+=2
-        mainDict.get(indexpl2).get('statistics')[3]=0
+        mainDict.get(indexpl1).get('statistics')[0]+=2 #+2 putnos totales al pl1
+        mainDict.get(indexpl2).get('statistics')[3]=0 # Las victorias consecutivas del pl2 se vuelven 0
         input(f'El ganador de la partida fue el {first}. Presione enter para volver al menú principal')
     if (consecutivespl2==3):
-        mainDict.get(indexpl2).get('statistics')[3]+=1
+        mainDict.get(indexpl2).get('statistics')[3]+=1 #+1 victoria consecutiva al pl2
         if mainDict.get(indexpl2).get('statistics')[3]==2:
-            mainDict.get(indexpl2).get('statistics')[4]=True
+            mainDict.get(indexpl2).get('statistics')[4]=True #si el pl2 tiene dos victorias consecutivas, se gana un escudo
             print(f'Por haber ganado dos partidas consecutivas, el jugador{second} se ha ganado un escudo.')
-        mainDict.get(indexpl2).get('statistics')[0]+=2
-        mainDict.get(indexpl1).get('statistics')[3]=0
+        mainDict.get(indexpl2).get('statistics')[0]+=2 # +2 puntos totales al jugador 2
+        mainDict.get(indexpl1).get('statistics')[3]=0 #Las victorias consecutivas del jugador 1 se vuelven 0
         input(f'El ganador de la partida fue el {second}. Presione enter para volver al menú principal')
 
 def twoPlayerGame(mainDict:dict):
@@ -84,7 +84,7 @@ def playerVsMachine(player, mainDict:dict):
     consecutivespl1=0
     consecutivesIA=0
     indexpl1=0
-    indexpIA=0
+    indexpIA="0"
     switchGameM= True
 
     for k,v in mainDict.items(): #buscar indice del jugador 1
@@ -99,7 +99,7 @@ def playerVsMachine(player, mainDict:dict):
             if (optionpl1==1 and optionIA==1) or (optionpl1==2 and optionIA==2) or (optionpl1==3 and optionIA==3):
                 input('Esta ronda fue un empate. Presione enter para ir a la siguiente ronda')
             elif(optionpl1==2 and optionIA==1) or (optionpl1==3 and optionIA==2) or (optionpl1==1 and optionIA==3): #partida ganada pl1
-                if(mainDict.get(indexpIA).get('statistics')[3]==True):
+                if(mainDict.get(indexpIA).get('statistics')[3]==True): #si la IA tiene escudo,  se consume
                     mainDict.get(indexpIA).get('statistics')[3]=False
                     print(f'La IA ha perdido esta ronda. Sin embargo,ha perdido su escudo y la derrota no contará.')
                 else:
@@ -107,7 +107,7 @@ def playerVsMachine(player, mainDict:dict):
                     consecutivesIA=0
                     print(f'{player} lleva {consecutivespl1} rondas  ganadas. IA ahora tiene 0')
             elif (optionIA==2 and optionpl1==1) or (optionIA==3 and optionpl1==2) or (optionIA==1 and optionpl1==3): #partida ganada IA
-                if(mainDict.get(indexpl1).get('statistics')[4]==True):
+                if(mainDict.get(indexpl1).get('statistics')[4]==True): #si el jugador1 tiene escudo,  se consume
                     mainDict.get(indexpl1).get('statistics')[4]=False
                     print(f'El jugador {player} ha perdido esta ronda. Sin embargo,ha perdido su escudo y la derrota no contará.')
                 else:
@@ -138,8 +138,6 @@ def playerVsMachine(player, mainDict:dict):
         mainDict.get(indexpl1).get('statistics')[3]=0 #Las victorias consecutivas de el jugador se vuelven 0
         mainDict.get(indexpl1).get('statistics')[2]+=1 # Se le suma una derrota contra la máquina al jugador
         input(f'El ganador de la partida fue la IA. Presione enter para volver al menú principal')
-
-    
 
 def onePlayerGame(mainDict:dict):
     os.system('clear')
