@@ -23,17 +23,21 @@ Por favor, ingrese la mejor opción:
 """))
     match optionChosen:
         case 1:
+            os.system('clear')
             vu.signUp(mainDict)
             sj.addData(mainDict)
             mainMenu(mainDict)
         case 2:
+            os.system('clear')
             gm.twoPlayerGame(mainDict)
+            sj.addData(mainDict)
             mainMenu(mainDict)
         case 3:
             pass
         case 4:
             pass
         case 5:
+            os.system('clear')
             input('Gracias por participar. Una vez oprima enter, el programa habrà terminado.')
         case _:
             input("La opciòn ingresada no es correcta. Cuando oprima enter, volverá al menú inicial.")

@@ -1,4 +1,5 @@
-{
+import game 
+directorioPrueba= {
     "0": {
         "name": "AI",
         "nickname": "AI",
@@ -6,29 +7,31 @@
             0,
             0,
             0,
-            false
+            False
         ]
     },
     "1": {
-        "name": "a",
-        "nickname": "aa",
+        "name": "juan",
+        "nickname": "juandacf",
         "statistics": [
-            4,
             0,
             0,
-            2,
-            true
+            0,
+            0,
+            False
         ]
     },
     "2": {
-        "name": "b",
-        "nickname": "bb",
+        "name": "pedro",
+        "nickname": "pedrito",
         "statistics": [
             0,
             0,
             0,
             0,
-            false
+            False
         ]
     }
 }
+
+game.actualGame2('pedrito','juan', directorioPrueba)

@@ -18,27 +18,16 @@ def signUp (mainDict):
             machineConstructor = {
                 'name':'AI',
                 'nickname': 'AI',
-                'statistics':{
-                    'totalScore': 0,
-                    'losses':0,
-                    'consecutiveRounds':0,
-                    'shield':False,
-                }
-            }
-            mainDict.update({0:machineConstructor})
+                'statistics':[0,0,0, False], 
+            }#0(PT), 1(winsmachine), 2[lossesmachine], 3[victoriasConsecutivas], 3[escudo]
+            mainDict.update({int(len(mainDict)):machineConstructor})
         
         if(signUpPermission==True):
             playerConstructor = {
                 'name': completeName,
                 'nickname': nickName,
-                'statistics': {
-                    'totalScore': 0,
-                    'scoreMachine':0,
-                    'lossesAgainstMachine':0,
-                    'consecutiveRounds':0,
-                    'shield':False,
-                }
-            
+                'statistics': [0,0,0,0, False],
+        
             }
             mainDict.update({int(len(mainDict)):playerConstructor})
         else:
@@ -57,6 +46,7 @@ def logIn(mainDict:dict):
                 validateSwitch= True
     
     if(validateSwitch==True):
+
         return str(nickName)
     else:
         return False
