@@ -12,16 +12,20 @@ mainDictionary= sj.readFile()
 
 def mainMenu(mainDict):
     os.system('clear')
-    optionChosen = int(input("""
-                         
-PIEDRA🪨, PAPEL📃 O TIJERA 8<
-Por favor, ingrese la mejor opción:
-1. Registrarme como usuario nuevo. 
-2. Jugar (2 jugadores)
-3. Jugar (1 vs IA)
-4. Ver estadísticas notables
-5. Salir del programa. 
-"""))
+    try:
+        optionChosen = int(input("""
+                            
+    PIEDRA🪨, PAPEL📃 O TIJERA 8<
+    Por favor, ingrese la mejor opción:
+    1. Registrarme como usuario nuevo. 
+    2. Jugar (2 jugadores)
+    3. Jugar (1 vs IA)
+    4. Ver estadísticas notables
+    5. Salir del programa. 
+    """))
+    except:
+        input('La opción ingresada no es válida. Cuando oprima enter, será llevado al menú principal')
+        mainMenu(mainDict)
     match optionChosen:
         case 1:
             os.system('clear')

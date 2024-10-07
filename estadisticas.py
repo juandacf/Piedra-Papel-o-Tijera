@@ -1,10 +1,13 @@
 import os
 def generalStatistics(mainDict):
-    os.system('clear')
-    threeBestGeneralPlayers(mainDict)
-    worstPlayer(mainDict)
-    ThreelosersAgainstMachine(mainDict)
-    winnersAgainsMachine(mainDict)
+    if(len(mainDict)<4):
+        print('Se necesitan al menos 3 jugadores para que estadísticas puedan ser generadas')
+    else:
+        os.system('clear')
+        threeBestGeneralPlayers(mainDict)
+        worstPlayer(mainDict)
+        ThreelosersAgainstMachine(mainDict)
+        winnersAgainsMachine(mainDict)
 
     input('Cuando oprima enter, volverá al menú principal')
 
@@ -13,7 +16,7 @@ def threeBestGeneralPlayers(mainDict):
     scores = []
     bestPlayers= []
     for k,v in mainDict.items():
-        playername= v.get('name')
+        playername= v.get('nickname')
         totalPoints= v.get('statistics')[0]
         players.update({playername:totalPoints})
         scores.append(totalPoints)
@@ -24,18 +27,18 @@ def threeBestGeneralPlayers(mainDict):
     rank2=bestPlayers[1]
     rank3=bestPlayers[2]
 
-    for k,v in mainDict.items():
-        if v.get('statistics')[0]==rank1:
+    for k,v in players.items():
+        if v==rank1:
             indexRank1= k
-        if v.get('statistics')[0]==rank2:
+        if v==rank2:
             indexRank2= k
-        if v.get('statistics')[0]==rank3:
+        if v==rank3:
             indexRank3=k
     
     print(f"""
-1. El jugador con rank 1,en base a los puntos totales, es {mainDict.get(indexRank1).get('nickname')} con un puntaje de {mainDict.get(indexRank1).get('statistics')[0]}
-2. El jugador con rank 2, en base a los puntos totales, es {mainDict.get(indexRank2).get('nickname')} con un puntaje de {mainDict.get(indexRank2).get('statistics')[0]}
-3.El jugador con rank 3, es {mainDict.get(indexRank3).get('nickname')} con un puntaje de {mainDict.get(indexRank3).get('statistics')[0]}
+1. El jugador con rank 1,en base a los puntos totales, es {indexRank1} con un puntaje de {rank1}
+2. El jugador con rank 2, en base a los puntos totales, es {indexRank2} con un puntaje de {rank2}
+3.El jugador con rank 3,en base a los puntos totales, es {indexRank3} con un puntaje de {rank3}
 """)
      
         
@@ -95,5 +98,5 @@ def winnersAgainsMachine (mainDict):
             if v.get('statistics')[1]>0:
                 winnersMachine+=1
 
-    print(f'{winnersMachine} de {totalPLayers} le han ganado a la máquina.')
+    print(f'{winnersMachine} de {totalPLayers} jugadores le han ganado a la máquina.')
 

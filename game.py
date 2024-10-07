@@ -21,9 +21,13 @@ def actualGame2(first,second,mainDict):
 
 
     while(switchGame==True): #validar el ingreso de strings para que no salga error 
+        try:
+            optionpl1= int(input(f'Por favor,{first}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
+            optionpl2= int(input(f'Por favor,{second}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
+        except:
+            input('Los valores ingresados no son válidos. Por favor, oprima enter para intentarlo de nuevo')
+            actualGame2(first,second,mainDict)
 
-        optionpl1= int(input(f'Por favor,{first}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
-        optionpl2= int(input(f'Por favor,{second}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
         if(optionpl1<4 and optionpl1>0) or (optionpl2<4 and optionpl2>0):
             if (optionpl1==1 and optionpl2==1) or (optionpl1==2 and optionpl2==2) or (optionpl1==3 and optionpl2==3):
                 input('Esta ronda fue un empate. Presione enter para ir a la siguiente ronda')
@@ -38,6 +42,7 @@ def actualGame2(first,second,mainDict):
             elif (optionpl2==2 and optionpl1==1) or (optionpl2==3 and optionpl1==2) or (optionpl2==1 and optionpl1==3): #partida ganada pl2
                 if(mainDict.get(indexpl1).get('statistics')[4]==True):
                     mainDict.get(indexpl1).get('statistics')[4]=False
+                    print(f'El jugador {first} ha perdido esta ronda. Sin embargo, ha perdido su escudo y la derrota no contará.')
                 else:
                     consecutivespl2+=1
                     consecutivespl1=0
@@ -92,7 +97,11 @@ def playerVsMachine(player, mainDict:dict):
             indexpl1=k
 
     while(switchGameM==True):
-        optionpl1= int(input(f'Por favor,{player}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
+        try:
+            optionpl1= int(input(f'Por favor,{player}, ingrese 1 para escoger piedra🪨. Ingrese 2 para papel📃. Ingrese 3 para tijera8<: '))
+        except:
+            input('La información ingresada no es válida. Por favor, vuelva a intentarlo')
+            playerVsMachine(player, mainDict)
         optionIA= random.randint(1,3)
 
         if(optionpl1<4 and optionpl1>0) or (optionIA<4 and optionIA>0):
