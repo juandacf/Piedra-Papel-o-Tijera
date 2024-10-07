@@ -14,10 +14,10 @@
         "nickname": "aa",
         "statistics": [
             6,
+            2,
             1,
-            0,
             1,
-            false
+            true
         ]
     },
     "2": {
@@ -25,8 +25,8 @@
         "nickname": "bb",
         "statistics": [
             2,
-            0,
-            0,
+            1,
+            2,
             1,
             false
         ]
@@ -37,7 +37,7 @@
         "statistics": [
             0,
             0,
-            0,
+            3,
             0,
             false
         ]

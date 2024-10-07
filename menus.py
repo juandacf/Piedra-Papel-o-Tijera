@@ -3,7 +3,7 @@ import os
 import validateUser as vu
 import storageJson as sj
 import game as gm
-
+import estadisticas as s
 
 mainDictionary ={}
 sj.checkFile('storageDictionary')
@@ -39,7 +39,8 @@ Por favor, ingrese la mejor opción:
             sj.addData(mainDict)
             mainMenu(mainDict)
         case 4:
-            pass
+            s.generalStatistics(mainDict)
+            mainMenu(mainDict)
         case 5:
             os.system('clear')
             input('Gracias por participar. Una vez oprima enter, el programa habrà terminado.')
