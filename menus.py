@@ -50,6 +50,6 @@ def mainMenu(mainDict):
             input('Gracias por participar. Una vez oprima enter, el programa habrà terminado.')
         case _:
             input("La opciòn ingresada no es correcta. Cuando oprima enter, volverá al menú inicial.")
-            mainMenu()
+            mainMenu(mainDict)
         
 mainMenu(mainDictionary)
