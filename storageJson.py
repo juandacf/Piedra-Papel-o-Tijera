@@ -1,7 +1,7 @@
 import json
 import os
 
-dataBasePath = 'data/storageDictionary.json' 
+dataBasePath = 'data/storageDictionary.json' #Al momento de ejeucuón del programa, revisar que se esté en la carpeta Proyecto_PythonCaballeroJuan
 
 def newFile(fileName):
     with open (dataBasePath, "w") as wf:

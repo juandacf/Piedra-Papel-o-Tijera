@@ -3,9 +3,9 @@
         "name": "AI",
         "nickname": "AI",
         "statistics": [
+            2,
             0,
-            0,
-            0,
+            1,
             false
         ]
     },
@@ -15,7 +15,7 @@
         "statistics": [
             0,
             0,
-            0,
+            1,
             0,
             false
         ]
