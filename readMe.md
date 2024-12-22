@@ -1,4 +1,4 @@
-```md
+
 # Piedra Papel o Tijera
 
 El propósito de este proyecto es crear una interfaz de juego, basada en las reglas del Piedra, Papel o Tijera, donde se involucren estructuras de datos de Python como diccionarios y listas. El contenido de estas estructuras será mediado a través de elementos como condicionales, iteradores, contadores, entre otros. Estos elementos, almacenados en funciones, serán distribuidos en diferentes módulos.
@@ -31,4 +31,3 @@ Todos los módulos anteriores serán condensados en este archivo, donde se crear
 ## Instrucciones
 
 Para jugar este juego, el usuario debe ejecutar el archivo `menus.py`.
-```
