@@ -6,7 +6,7 @@ import game as gm
 import estadisticas as s
 
 mainDictionary ={}
-sj.checkFile({})
+sj.checkFile()
 mainDictionary= sj.readFile()
 
 

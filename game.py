@@ -37,16 +37,14 @@ def actualGame2(first,second,mainDict):
                     print(f'el jugador {second} ha perdido esta ronda. Sin embargo,ha perdido su escudo y la derrota no contará.')
                 else:
                     consecutivespl1+=1
-                    consecutivespl2=0
-                    print(f'{first} lleva {consecutivespl1} rondas ganadas. {second} ahora tiene 0')
+                    print(f'{first} lleva {consecutivespl1} rondas ganadas. {second} tiene {consecutivespl2}')
             elif (optionpl2==2 and optionpl1==1) or (optionpl2==3 and optionpl1==2) or (optionpl2==1 and optionpl1==3): #partida ganada pl2
                 if(mainDict.get(indexpl1).get('statistics')[4]==True):
                     mainDict.get(indexpl1).get('statistics')[4]=False
                     print(f'El jugador {first} ha perdido esta ronda. Sin embargo, ha perdido su escudo y la derrota no contará.')
                 else:
                     consecutivespl2+=1
-                    consecutivespl1=0
-                print(f'{second} lleva {consecutivespl2} rondas ganadas. {first} ahora tiene 0')
+                print(f'{second} lleva {consecutivespl2} rondas ganadas. {first} tiene {consecutivespl1}')
         else:
             print("Por favor, ingrese un valor adecuado:")
 
@@ -113,16 +111,15 @@ def playerVsMachine(player, mainDict:dict):
                     print(f'La IA ha perdido esta ronda. Sin embargo,ha perdido su escudo y la derrota no contará.')
                 else:
                     consecutivespl1+=1
-                    consecutivesIA=0
-                    print(f'{player} lleva {consecutivespl1} rondas  ganadas. IA ahora tiene 0')
+                    print(f'{player} lleva {consecutivespl1} rondas  ganadas. IA ahora tiene {consecutivesIA}')
             elif (optionIA==2 and optionpl1==1) or (optionIA==3 and optionpl1==2) or (optionIA==1 and optionpl1==3): #partida ganada IA
                 if(mainDict.get(indexpl1).get('statistics')[4]==True): #si el jugador1 tiene escudo,  se consume
                     mainDict.get(indexpl1).get('statistics')[4]=False
                     print(f'El jugador {player} ha perdido esta ronda. Sin embargo,ha perdido su escudo y la derrota no contará.')
                 else:
                     consecutivesIA+=1
-                    consecutivespl1=0
-                print(f' IA lleva {consecutivesIA} rondas ganadas. {player} ahora tiene 0')
+                print(f' IA lleva {consecutivesIA} rondas ganadas. {player} tiene {consecutivespl1}')
+
         else:
             print("Por favor, ingrese un valor adecuado:")
 
